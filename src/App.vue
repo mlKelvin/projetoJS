@@ -1,8 +1,7 @@
 <template>
   <div>
-    <p>Autor: {{ autor }}</p>
-    <p :title="mensagem">{{ new Date().toLocaleString() }}</p>
-    <button @click="transformar()">Mudar autor</button>
+    <autor-header nome="nome 1"> </autor-header>
+    <autor-header nome="nome 2"> </autor-header>
 
     <div>
       <h2>Projetos</h2>
@@ -44,7 +43,13 @@
 </template>
 
 <script>
+import AutorHeader from './components/AutorHeader.vue'
+    
 export default{
+  components: {
+        AutorHeader
+    },
+
   data(){
     return{
         //json
@@ -149,18 +154,6 @@ export default{
 
     isSelected(projeto){
       return this.selected !== null && this.selected.id == projeto.id
-    },
-
-    transformar(){
-      if (this.maiuscula) {
-        this.autor = this.autor.toLowerCase()
-        this.maiuscula = false
-      }
-      
-      else{
-        this.autor = this.autor.toUpperCase()
-        this.maiuscula = true
-      }
     },
 
     excluir(projeto){
