@@ -38,16 +38,20 @@
       {{selected}} <br>
       <span style="display: flex; justify-content: left">Duracao total: {{ values() }}</span>
     </div>
+    <br><br>
+    <temp-converter> </temp-converter>
   </div>
 
 </template>
 
 <script>
 import AutorHeader from './components/AutorHeader.vue'
+import TempConverter from './components/TempConverter.vue'
     
 export default{
   components: {
-        AutorHeader
+        AutorHeader,
+        TempConverter
     },
 
   data(){
